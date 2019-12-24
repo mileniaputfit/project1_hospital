@@ -1,7 +1,7 @@
 const   express = require('express'),
         mongoose = require('mongoose'),
         app = express(),
-        port = 3001
+        port = 3300
         model = require('./model/model')
         route = require('./router/router')
 

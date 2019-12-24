@@ -10,16 +10,9 @@ exports.daftarMenu = function(req,res) {
 }
 
 exports.tambahMenu = function(req,res) {
-    var menuBaru = new Menu(req.body)
-    menuBaru.save(function(err, menu) {
-        if(err) res.send(err)
-        res.json(menu)
-    })
-    var menuBar = new Menu2(req.body)
-    menuBar.save(function(err, menu) {
-        if(err) res.send(err)
-        // res.json(menu)
-    })
+    console.log(req.body)
+    console.log("data")
+    res.send(req.body)
 }
 
 exports.pilihMenu = function(req,res) {

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register User</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+
+                <p>&larr; <a href="/">Home</a>
+
+                    <h4>We Care For Your Health Every Moment</h4>
+                    <p>Sudah punya akun? <a href="/">Login Here</a></p>
+
+                    <div id="register" class="modal"></div>
+                    <form action="" method="post">
+                        <div class="container">
+                            <form onSubmit="alert('Submitted'); return false;"></form>
+                            <label for="name"><b>Nama Lengkap</b></label>
+                            <input type="text" placeholder="Your Name" name="name" id="Name" required><br>
+
+                            <label for="email"><b>Email</b></label><br>
+                            <input type="email" placeholder="Enter Email" name="email" id="Email" required><br>
+
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" id="Username" title ="8 Character Username" pattern="^[a-zA-Z][a-zA-z0-9-_/]{7,10}$" required><br>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="password" id="Password" title ="8 Character Password. Use Uppercase, Lowercase, Numeric" pattern="(?=^.{8,15}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
+
+                            <button type="button" onclick="postData()">Register Now</button>
+                        </div>
+                    </form>
+            </div>
+
+            <div class="col-md-6">
+                <img class="img img-responsive" src="" />
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="jquery-3.4.1.min.js"></script>
+<script>
+    // Get the modal
+    function postData() {
+        $.ajax({
+            type: "POST",
+            crossDomain: true,
+            url: "http://192.168.43.173:5000/account/auth",
+            data: JSON.stringify({
+                name: document.getElementById("Name").value,
+                email: document.getElementById("Email").value,
+                username: document.getElementById("Username").value,
+                password: document.getElementById("Password").value
+            })
+        })
+    }
+    var modal = document.getElementById('register');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</html>

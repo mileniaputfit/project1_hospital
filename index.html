@@ -1,266 +1,171 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="img/favicon.png" type="image/png">
-  <title>Medical</title>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="vendors/linericon/style.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-  <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-  <link rel="stylesheet" href="vendors/animate-css/animate.css">
-  <link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
-  <!-- main css -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    /* Full-width input fields */
-    input[type=text],
-    input[type=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    /* Set a style for all buttons */
-    button {
-      background-color: rgb(88, 192, 152);
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      opacity: 0.8;
-    }
-
-    /* Center the image and position the close button */
-    .imgcontainer {
-      text-align: center;
-      margin: 24px 0 12px 0;
-      position: relative;
-    }
-
-    img.avatar {
-      width: 15%;
-      border-radius: 50%;
-    }
-
-    .container {
-      padding: 16px;
-    }
-
-    span.psw {
-      float: right;
-      padding-top: 16px;
-    }
-
-    span.reg {
-      float: center;
-      padding-top: 16px;
-    }
-
-    /* The Modal (background) */
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
-      padding-top: 50px;
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto 15% auto;
-      /* 5% from the top, 15% from the bottom and centered */
-      border: 1px solid #888;
-      width: 75%;
-      /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button (x) */
-    .close {
-      position: absolute;
-      right: 25px;
-      top: 0;
-      color: #000;
-      font-size: 35px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: rgb(226, 160, 37);
-      cursor: pointer;
-    }
-
-    /* Add Zoom Animation */
-    .animate {
-      -webkit-animation: animatezoom 0.6s;
-      animation: animatezoom 0.6s
-    }
-
-    @-webkit-keyframes animatezoom {
-      from {
-        -webkit-transform: scale(0)
-      }
-
-      to {
-        -webkit-transform: scale(1)
-      }
-    }
-
-    @keyframes animatezoom {
-      from {
-        transform: scale(0)
-      }
-
-      to {
-        transform: scale(1)
-      }
-    }
-
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-      span.psw {
-        display: block;
-        float: none;
-      }
-    }
-  </style>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<title>Medical</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<link rel="stylesheet" href="vendors/animate-css/animate.css">
+	<link rel="stylesheet" href="vendors/jquery-ui/jquery-ui.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
-  
-  <button onclick="document.getElementById('login').style.display='block'" style="width:auto;">Login</button>
-  <div id="login" class="modal">
-    <form class="modal-content animate" action="" method="post">
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close">&times;</span>
-        <img src="user.png" alt="Avatar" class="avatar">
-      </div>
+	<!--================Header Menu Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="home.html">
+						<img src="" alt="">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<div class="row ml-0 w-100">
+							<div class="col-lg-12 pr-0">
+								<ul class="nav navbar-nav center_nav pull-right">
+									<li class="nav-item active">
+										<a class="nav-link" href="/">Home</a>
+									</li>
+									<li class="nav-item submenu dropdown">
+										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+											role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+										<ul class="dropdown-menu">
+											<li class="nav-item">
+												<a class="nav-link" href="#">About</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Services</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Elements</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================Header Menu Area =================-->
 
-      <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="email" id="Email" required>
+	<!--================ Home Banner Area =================-->
+	<section class="home_banner_area">
+		<div class="banner_inner d-flex align-items-center">
+			<div class="container">
+				<div class="banner_content row">
+					<div class="col-lg-12">
+						<h1>We Care for Your Health Every Moment</h1>
+						<p>If you are looking at blank cassettes on the web, you may be very confused at the difference
+							in price You may see some
+							for as low as each.</p>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="pass" id="Pass" required>
+						<button onclick="document.getElementById('login').style.display='block'" style="width:auto;">Get
+							Started</button>
+						<div id="login" class="modal">
+							<form class="modal-content animate" action="" method="post">
+								<div class="imgcontainer">
+									<span onclick="document.getElementById('login').style.display='none'" class="close"
+										title="Close">&times;</span>
+									<img src="user.png" alt="Avatar" class="avatar">
+								</div>
 
-        <button type="button" onclick="postData()">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-        <br>
-        <span class="psw">Forgot <a href="#">Password?</a></span>
-        <br>
-        <span class="reg"><a href="#">Register</a></span>
-      </div>
-    </form>
-  </div>
-  <script src="jquery-3.4.1.min.js">
-  </script>
-  <script>
-    // Get the modal
+								<div class="container">
+									<label for="uname"><b>Username</b></label>
+									<input type="text" placeholder="Enter Email" name="email" id="Email" required>
 
-    function postData() {
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:3001/user",
-        data: {
-          email: document.getElementById("Email").value,
-          pass: document.getElementById("Pass").value
-        },
-        success: (res) => console.log(res),
-      })
-    }
-    var modal = document.getElementById('login');
+									<label for="psw"><b>Password</b></label>
+									<input type="password" placeholder="Enter Password" name="password" id="Password"
+										required>
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-	<!--================ Start Appointment Area =================-->
-	<section class="appointment-area">
-      <div class="container">
-        <div class="row justify-content-between align-items-center appointment-wrap">
-          <div class="col-lg-5 col-md-6 appointment-left">
-            <h1>
-              Servicing Hours
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <ul class="time-list">
-              <li class="d-flex justify-content-between">
-                <span>Monday-Friday</span>
-                <span>08.00 am - 10.00 pm</span>
-              </li>
-              <li class="d-flex justify-content-between">
-                <span>Saturday</span>
-                <span>08.00 am - 10.00 pm</span>
-              </li>
-              <li class="d-flex justify-content-between">
-                <span>Sunday</span>
-                <span>08.00 am - 10.00 pm</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--================ End Appointment Area =================-->
-  
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  
-    <!--================ Optional JavaScript =================-->
-    <!--================ jQuery first, then Popper.js, then Bootstrap JS =================-->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="vendors/isotope/isotope-min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/custom.js"></script>
+									<button type="button" onclick="postData()">Login</button>
+									<label>
+										<input type="checkbox" checked="checked" name="remember"> Remember me
+									</label>
+									<br>
+									<span class="psw">Forgot <a href="#">Password?</a></span>
+									<br>
+									<span onclick="document.getElementById('register').style.display='block'"
+										class="reg"><a href="/register">Register</a></span>
+								</div>
+							</form>
+						</div>
+						<script src="jquery-3.4.1.min.js">
+						</script>
+						
+						<script>
+						  // Get the modal
+					  
+						  function postData() {
+							$.ajax({
+							  type: "POST",
+							  url: "http://192.168.43.173:5000/account/auth",
+							  data: JSON.stringify({
+								email: document.getElementById("Email").value,
+								password: document.getElementById("Password").value
+							  })
+							})
+						  }
+						  var modal = document.getElementById('login');
+					  
+						  // When the user clicks anywhere outside of the modal, close it
+						  window.onclick = function (event) {
+							if (event.target == modal) {
+							  modal.style.display = "none";
+							}
+						  }
+						</script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================ End Home Banner Area =================-->
+
+	<!--================ Optional JavaScript =================-->
+	<!--================ jQuery first, then Popper.js, then Bootstrap JS =================-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="vendors/isotope/isotope-min.js"></script>
+	<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<script src="js/custom.js"></script>
 </body>
 
 </html>
