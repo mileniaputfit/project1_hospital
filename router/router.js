@@ -24,18 +24,25 @@ module.exports = function (app) {
 
     app
         .route("/user")
-        .get(user.daftarMenu)
-        .post(user.tambahMenu)
-        .delete(user.hapusSemua)
+        .get(user.userr)
+        .post(user.daftarMenu)
+        //.delete(user.hapusSemua)
 
     app
-        .route("/reg")
-        .get(user.daftarMenu)
-        .post(user.tambahMenu)
-        .delete(user.hapusSemua)
+        .route("/data")
+        .get(user.daftar)
+        .post(user.tambah)
+        .delete(user.hapusAll)
+
     app
-        .route("/user/:menuId")
-        .get(user.pilihMenu)
-        .put(user.ubahMenu)
-        .delete(user.hapusMenu)
+        .route("/user/:MenuId")
+        .get(user.daftarMenu)
+        .put(user.tambahMenu)
+        .delete(user.hapusSemua)
+    
+    app
+        .route("/data/:Id")
+        .get(user.pilih)
+        .put(user.ubah)
+        .delete(user.hapus)
 }

@@ -11,9 +11,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../img/favicon.png" type="image/png">
@@ -46,7 +43,7 @@
                     <form action="" method="post">
                         <div class="container">
                             <form onSubmit="alert('Submitted'); return false;"></form>
-                            <label for="name"><b>Nama Lengkap</b></label>
+                            <label for="name"><b>Nama Wali</b></label>
                             <input type="text" placeholder="Your Name" name="name" id="Name" required><br>
 
                             <label for="email"><b>Email</b></label><br>
@@ -81,7 +78,7 @@
             data: JSON.stringify({
                 name: document.getElementById("Name").value,
                 email: document.getElementById("Email").value,
-                username: document.getElementById("Username").value,
+                uname: document.getElementById("Username").value,
                 password: document.getElementById("Password").value
             })
         })
@@ -96,4 +93,35 @@
     }
 </script>
 
+<!--================ Start Appointment Area =================-->
+<section class="appointment-area">
+        <div class="container">
+            <div class="row justify-content-between align-items-center appointment-wrap">
+                <div class="col-lg-5 col-md-6 appointment-left">
+                    <h1>
+                        Servicing Hours
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua.
+                    </p>
+                    <ul class="time-list">
+                        <li class="d-flex justify-content-between">
+                            <span>Monday-Friday</span>
+                            <span>08.00 am - 10.00 pm</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Saturday</span>
+                            <span>08.00 am - 10.00 pm</span>
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <span>Sunday</span>
+                            <span>08.00 am - 10.00 pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Appointment Area =================-->
 </html>

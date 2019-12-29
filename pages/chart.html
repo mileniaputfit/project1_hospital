@@ -95,7 +95,7 @@
         function getData() {
             fetch("http://localhost:3000/data").then(res => res.json().then(data => {
                 let time = new Date()
-                time = time.toLocaleTimeString().toString()
+                time = time.localTime().toString()
                 addData(lineChart, 0, time, data.temp)
                 addData(lineChart, 1, time, data.adc)
                 addData(lineChart, 2, time, data.voltage)
