@@ -22,11 +22,16 @@ module.exports = function (app) {
             res.sendFile(path.join(__dirname, "../") + "pages/pasien.html")
         })
 
+    app.route("/numb")
+        .get(function (req, res) {
+            res.sendFile(path.join(__dirname, "../") + "pages/number.html")
+        })
+        
     app
         .route("/user")
         .get(user.userr)
         .post(user.daftarMenu)
-        //.delete(user.hapusSemua)
+    //.delete(user.hapusSemua)
 
     app
         .route("/data")
@@ -39,7 +44,7 @@ module.exports = function (app) {
         .get(user.daftarMenu)
         .put(user.tambahMenu)
         .delete(user.hapusSemua)
-    
+
     app
         .route("/data/:Id")
         .get(user.pilih)
